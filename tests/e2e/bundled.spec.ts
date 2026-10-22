@@ -1,0 +1,50 @@
+import { test, expect } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import type { VocabularyPack } from '../../src/model';
+const pack = JSON.parse(readFileSync(resolve('public/content/spanish-1500/manifest.json'), 'utf8')) as VocabularyPack;
+test('1500er-Wortschatz startet direkt, spielt echtes Audio, speichert FSRS und bleibt nach Neustart verfügbar', async ({ page }) => {
+  test.setTimeout(120_000);
+  const errors: string[] = []; const external: string[] = [];
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('request', request => {
+    if (/^https?:/.test(request.url()) && !request.url().startsWith('http://127.0.0.1:5173/')) external.push(request.url());
+  });
+  await page.addInitScript(() => {
+    const original = HTMLMediaElement.prototype.play;
+    (window as unknown as { played: number }).played = 0;
+    HTMLMediaElement.prototype.play = function () {
+      return original.call(this).then(() => { (window as unknown as { played: number }).played++; });
+    };
+  });
+  await page.goto('/');
+  await expect(page.locator('.word')).toBeVisible({ timeout: 90_000 });
+  await expect(page.locator('.tile svg.illustration')).toHaveCount(4);
+  await page.locator('.word').click();
+  await expect.poll(() => page.evaluate(() => (window as unknown as { played: number }).played)).toBeGreaterThan(0);
+  await page.getByRole('button', { name: 'Einstellungen öffnen' }).click();
+  await expect(page.getByText('Spanisch · 1500 Bildvokabeln', { exact: false })).toBeVisible();
+  await page.getByLabel('Neue Wörter pro Tag', { exact: true }).fill('1');
+  await page.getByRole('button', { name: 'Einstellungen speichern' }).click();
+  await expect(page.getByRole('dialog')).toHaveCount(0);
+  const text = await page.locator('.word').innerText();
+  const word = pack.vocabulary.find(word => word.word === text)!;
+  const r = word.imageRegion!;
+  const expected = `${r.x} ${r.y} ${r.width} ${r.height}`;
+  const regions = await page.locator('.tile svg.illustration').evaluateAll(elements => elements.map(el => el.getAttribute('viewBox')));
+  const correct = regions.indexOf(expected);
+  expect(correct).toBeGreaterThanOrEqual(0);
+  await page.screenshot({ path: 'test-results/spanish-1500-desktop.png' });
+  await page.locator('.tile').nth(correct).click();
+  await expect(page.getByRole('heading', { name: 'Für jetzt geschafft.' })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole('heading', { name: 'Für jetzt geschafft.' })).toBeVisible();
+  await page.getByRole('button', { name: 'Einstellungen öffnen' }).click();
+  await expect(page.locator('.history-summary')).toHaveText('1 Antworten · 1 richtig · 0 falsch');
+  await page.getByRole('button', { name: 'Schließen', exact: true }).click();
+  await page.getByRole('button', { name: 'Frei weiterüben' }).click();
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.screenshot({ path: 'test-results/spanish-1500-mobile.png' });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  expect(external).toEqual([]); expect(errors).toEqual([]);
+});

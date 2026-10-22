@@ -1,0 +1,520 @@
+#01|Früchte|noun
+la manzana|Apfel|red apple
+el plátano|Banane|yellow banana
+la naranja|Orange|orange fruit with leaf
+la pera|Birne|green pear
+las uvas|Weintrauben|bunch of purple grapes
+la fresa|Erdbeere|red strawberry
+la sandía|Wassermelone|watermelon slice
+la piña|Ananas|whole pineapple
+el limón|Zitrone|yellow lemon
+las cerezas|Kirschen|pair of red cherries
+el melocotón|Pfirsich|peach with leaf
+el kiwi|Kiwi|halved kiwi fruit
+el coco|Kokosnuss|coconut cut in half
+los arándanos|Heidelbeeren|small cluster of blueberries
+el mango|Mango|ripe mango fruit
+la frambuesa|Himbeere|single red raspberry
+la mora|Brombeere|single blackberry
+la ciruela|Pflaume|purple plum
+el albaricoque|Aprikose|orange apricot fruit
+el higo|Feige|ripe fig cut open
+la granada|Granatapfel|pomegranate cut open
+el melón|Melone|cantaloupe melon slice
+el pomelo|Grapefruit|grapefruit cut open
+la lima|Limette|green lime cut open
+el aguacate|Avocado|avocado cut in half with pit
+#02|Gemüse|noun
+la zanahoria|Karotte|orange carrot with green leaves
+la patata|Kartoffel|two brown potatoes
+el tomate|Tomate|round red tomato with green stem
+la cebolla|Zwiebel|golden onion and cut half
+el ajo|Knoblauch|white garlic bulb with one clove
+el pepino|Gurke|long green cucumber and slice
+la lechuga|Kopfsalat|round green lettuce head
+el brócoli|Brokkoli|green broccoli head
+la coliflor|Blumenkohl|white cauliflower with leaves
+la berenjena|Aubergine|purple eggplant
+el calabacín|Zucchini|dark green zucchini with pale slice
+la calabaza|Kürbis|large round orange pumpkin
+el pimiento|Paprika|red bell pepper
+el maíz|Mais|yellow corn on the cob in green husk
+los guisantes|Erbsen|open green pea pod
+las judías verdes|grüne Bohnen|slender green bean pods
+las espinacas|Spinat|bunch of dark green spinach leaves
+la remolacha|Rote Bete|purple beet with leaves and cut half
+el rábano|Radieschen|red radish with white root and green leaves
+el puerro|Lauch|long white and green leek
+el apio|Sellerie|cluster of pale green celery stalks
+el espárrago|Spargel|three green asparagus spears
+la alcachofa|Artischocke|green artichoke
+la col|Kohl|compact round cabbage with layered leaves
+la seta|Pilz|brown edible mushroom
+#03|Lebensmittel|noun
+el pan|Brot|rustic loaf of bread and one slice
+el arroz|Reis|bowl of white rice grains
+la pasta|Nudeln|small heap of yellow dry pasta spirals
+el huevo|Ei|white egg and cracked egg half
+el queso|Käse|yellow cheese wedge with holes
+la mantequilla|Butter|block of butter on a small dish
+la harina|Mehl|open plain paper bag of flour with a spoon
+el azúcar|Zucker|heap of white sugar with three sugar cubes
+la sal|Salz|small salt shaker beside salt crystals
+la pimienta|Pfeffer|pepper mill beside black peppercorns
+el aceite|Öl|clear bottle of golden cooking oil
+el vinagre|Essig|small glass cruet of dark vinegar with grapes
+la miel|Honig|honey jar with a wooden honey dipper
+la mermelada|Marmelade|jar of red jam with strawberries
+el yogur|Joghurt|open plain yogurt pot and spoon
+la nata|Sahne|small bowl of whipped cream with whisk
+el chocolate|Schokolade|brown chocolate bar with one square broken off
+las lentejas|Linsen|wooden bowl of small brown lentils
+los garbanzos|Kichererbsen|bowl of round beige chickpeas
+las almendras|Mandeln|three almonds one in shell
+las nueces|Walnüsse|walnut shell and exposed walnut halves
+los cacahuetes|Erdnüsse|peanut pods and red shelled peanuts
+las aceitunas|Oliven|small bowl of green olives with one leaf
+el tofu|Tofu|white tofu block with neatly cut cubes
+la avena|Haferflocken|bowl of oatmeal flakes and oat stalk
+#04|Gerichte|noun
+la sopa|Suppe|steaming bowl of vegetable soup with spoon
+la ensalada|Salat|salad bowl with lettuce tomato and cucumber
+la pizza|Pizza|round pizza with one slice pulled away
+la hamburguesa|Hamburger|burger in a bun with lettuce and cheese
+el bocadillo|belegtes Baguette|long baguette sandwich with ham and lettuce
+la tortilla|Omelett|thick round Spanish potato omelette with cut wedge
+la paella|Paella|wide shallow paella pan with yellow rice and shrimp
+el pescado|Fischgericht|cooked whole fish on a plate with lemon
+el pollo asado|Brathähnchen|whole roast chicken on a platter
+el filete|Steak|grilled steak with visible grill marks on a plate
+la salchicha|Wurst|two browned sausages
+el jamón|Schinken|cured ham leg on a wooden stand
+el tocino|Speck|three strips of bacon
+las albóndigas|Fleischbällchen|meatballs in tomato sauce on a plate
+las patatas fritas|Pommes frites|paper cone of french fries
+el puré|Kartoffelpüree|mashed potatoes in a bowl with a spoon
+el sushi|Sushi|three sushi rolls on a small tray
+los tacos|Tacos|two folded tacos with colorful filling
+la empanada|gefüllte Teigtasche|baked half moon pastry with crimped edge
+el guiso|Eintopf|pot of chunky vegetable and meat stew
+el helado|Eiscreme|ice cream cone with two scoops
+la tarta|Torte|slice of layered cake with strawberry
+la galleta|Keks|round chocolate chip cookie
+el flan|Karamellpudding|caramel custard pudding on a white plate
+el cruasán|Croissant|golden crescent croissant
+#05|Getränke und Frühstück|noun
+el agua|Wasser|clear drinking glass of water with blue water drop
+la leche|Milch|plain glass milk bottle and glass of white milk
+el café|Kaffee|small cup of black coffee with steam
+el té|Tee|teacup with visible tea bag and leaf
+el zumo|Saft|glass of orange juice with orange half
+la limonada|Limonade|pitcher of pale lemonade with lemon slices
+el batido|Milchshake|tall strawberry milkshake with straw
+el refresco|Erfrischungsgetränk|plain soda can and fizzy glass
+la cerveza|Bier|foamy golden beer mug
+el vino|Wein|wine glass with red wine and dark bottle
+el cacao|Kakao|mug of hot cocoa with cocoa beans
+el agua con gas|Sprudelwasser|clear bottle and glass of water with many bubbles
+el desayuno|Frühstück|breakfast tray with toast egg and coffee
+la tostada|Toast|slice of golden toasted bread
+los cereales|Frühstücksflocken|bowl of cornflakes and milk
+la magdalena|Muffin|small golden muffin in paper cup
+el churro|Churro|two ridged churros beside dipping chocolate
+el gofre|Waffel|square waffle with grid indentations
+el caramelo|Bonbon|one candy in twisted colorful wrapper
+la piruleta|Lutscher|round spiral lollipop on stick
+el bombón|Praline|single chocolate bonbon cut open
+las palomitas|Popcorn|striped tub of popcorn without text
+la pasa|Rosine|small bunch of wrinkled dark raisins
+el dátil|Dattel|two brown dates one open showing stone
+la castaña|Kastanie|shiny chestnut beside open prickly husk
+#06|Haustiere und Bauernhoftiere|noun
+el perro|Hund|friendly brown dog standing
+el gato|Katze|orange cat sitting with curled tail
+el caballo|Pferd|brown horse in side view
+la vaca|Kuh|black and white dairy cow
+el cerdo|Schwein|pink pig with curly tail
+la oveja|Schaf|fluffy white sheep
+la cabra|Ziege|goat with small horns and beard
+el burro|Esel|grey donkey with long ears
+el conejo|Kaninchen|white rabbit with long upright ears
+el hámster|Hamster|round golden hamster with full cheeks
+la cobaya|Meerschweinchen|brown and white guinea pig
+el ratón|Maus|small grey mouse with round ears and long thin tail
+la rata|Ratte|large brown rat with long tail
+la gallina|Henne|brown hen with small red comb
+el gallo|Hahn|colorful rooster with large comb and tail
+el pato|Ente|duck with green head and orange bill
+el ganso|Gans|white goose with long neck
+el pavo|Truthahn|turkey with fan tail
+el pollito|Küken|fluffy yellow chick
+el cordero|Lamm|tiny lamb beside a larger sheep outline
+el ternero|Kalb|small calf with short legs and large eyes
+el potro|Fohlen|young foal with long slender legs
+el cachorro|Welpe|small puppy with oversized paws
+el gatito|Kätzchen|tiny playful kitten with yarn ball
+el hurón|Frettchen|slender cream ferret with dark eye mask
+#07|Säugetiere|noun
+el león|Löwe|golden lion with large mane
+el tigre|Tiger|orange tiger with black stripes
+el elefante|Elefant|grey elephant with long trunk
+la jirafa|Giraffe|tall spotted giraffe
+la cebra|Zebra|black and white striped zebra
+el rinoceronte|Nashorn|grey rhinoceros with large nose horn
+el hipopótamo|Nilpferd|round grey hippopotamus
+el oso|Bär|brown bear standing on four paws
+el panda|Panda|black and white panda holding bamboo
+el lobo|Wolf|grey wolf with pointed ears
+el zorro|Fuchs|orange fox with bushy white tipped tail
+el ciervo|Hirsch|brown stag with branching antlers
+el alce|Elch|large moose with wide palm shaped antlers
+el camello|Kamel|two humped camel
+el canguro|Känguru|kangaroo with joey in pouch
+el koala|Koala|grey koala gripping eucalyptus branch
+el mono|Affe|brown monkey with curled tail
+el gorila|Gorilla|large dark gorilla with broad chest
+la ardilla|Eichhörnchen|red squirrel holding an acorn
+el erizo|Igel|small hedgehog with spiny back
+el murciélago|Fledermaus|bat with wings spread
+la nutria|Otter|brown otter holding a shell
+el castor|Biber|beaver with broad flat tail and front teeth
+el mapache|Waschbär|raccoon with black face mask and striped tail
+el perezoso|Faultier|sloth hanging from a branch
+#08|Vögel|noun
+el pájaro|Vogel|small generic songbird perched on twig
+el águila|Adler|eagle with hooked beak and spread wings
+el búho|Eule|brown owl with large round eyes
+el loro|Papagei|red and green parrot on perch
+el pingüino|Pinguin|black and white penguin standing
+el flamenco|Flamingo|pink flamingo standing on one leg
+el cisne|Schwan|white swan with curved neck
+la paloma|Taube|grey pigeon with iridescent neck
+el cuervo|Rabe|large black raven with strong beak
+el gorrión|Spatz|small brown sparrow
+la golondrina|Schwalbe|swallow flying with forked tail
+la gaviota|Möwe|white and grey seagull
+el pelícano|Pelikan|pelican with large throat pouch
+la cigüeña|Storch|white stork with black wings and long red legs
+el avestruz|Strauß|large ostrich with long bare neck
+el pavo real|Pfau|peacock with colorful eye patterned fan tail
+el tucán|Tukan|black toucan with enormous colorful beak
+el colibrí|Kolibri|tiny hummingbird hovering beside a flower
+el petirrojo|Rotkehlchen|small robin with red orange breast
+el canario|Kanarienvogel|bright yellow canary
+el halcón|Falke|peregrine falcon perched with narrow pointed wings
+el buitre|Geier|vulture with bald head and neck ruff
+el pájaro carpintero|Specht|woodpecker tapping a tree trunk
+la urraca|Elster|black and white magpie with long tail
+la grulla|Kranich|grey crane with long legs and elegant neck
+#09|Wassertiere|noun
+el delfín|Delfin|smiling grey dolphin jumping
+la ballena|Wal|large blue whale spouting water
+el tiburón|Hai|grey shark with dorsal fin and visible teeth
+la foca|Robbe|grey seal with flippers
+la morsa|Walross|brown walrus with long ivory tusks
+el pez|Fisch|small orange fish swimming
+el pulpo|Oktopus|purple octopus with eight arms
+el calamar|Tintenfisch|pink squid with pointed mantle and long tentacles
+la medusa|Qualle|translucent jellyfish with flowing tentacles
+la estrella de mar|Seestern|orange five armed starfish
+el caballito de mar|Seepferdchen|yellow seahorse with curled tail
+el cangrejo|Krabbe|red crab with two claws
+la langosta|Hummer|red lobster with long body and large claws
+la gamba|Garnele|curved pink shrimp
+el mejillón|Miesmuschel|open black mussel shell showing orange flesh
+la ostra|Auster|open oyster shell with pearl
+el caracol de mar|Meeresschnecke|spiral sea snail shell
+el erizo de mar|Seeigel|round purple sea urchin with spines
+la raya|Rochen|flat manta ray with broad wings and long tail
+el pez espada|Schwertfisch|blue swordfish with long pointed bill
+el pez globo|Kugelfisch|inflated round pufferfish with small spikes
+el pez payaso|Clownfisch|orange clownfish with white stripes
+el atún|Thunfisch|large streamlined tuna with yellow finlets
+el salmón|Lachs|silver salmon with pink side stripe
+la anguila|Aal|long dark eel swimming in an S curve
+#10|Kleine Tiere und Reptilien|noun
+la mariposa|Schmetterling|colorful butterfly with symmetrical spread wings
+la abeja|Biene|plump yellow and black bee with tiny wings
+la avispa|Wespe|slender yellow and black wasp with narrow waist
+la hormiga|Ameise|small red ant with six legs and antennae
+la mosca|Fliege|housefly with large eyes and transparent wings
+el mosquito|Stechmücke|mosquito with long legs and pointed proboscis
+la araña|Spinne|round spider with eight legs
+el escarabajo|Käfer|shiny green beetle
+la mariquita|Marienkäfer|red ladybird with black spots
+la libélula|Libelle|blue dragonfly with four long transparent wings
+el saltamontes|Heuschrecke|green grasshopper with large folded back legs
+el grillo|Grille|brown cricket with long antennae
+la oruga|Raupe|green segmented caterpillar on a leaf
+el gusano|Wurm|pink earthworm
+el caracol|Schnecke|garden snail with spiral shell
+la babosa|Nacktschnecke|brown slug without a shell
+el escorpión|Skorpion|scorpion with raised curved stinging tail
+la serpiente|Schlange|green snake coiled with forked tongue
+el cocodrilo|Krokodil|green crocodile with long snout and jagged back
+la tortuga|Schildkröte|land tortoise with domed patterned shell
+la lagartija|Eidechse|small green lizard with four legs and long tail
+el camaleón|Chamäleon|chameleon with curled tail and bulging eyes on twig
+la iguana|Leguan|green iguana with crest of spines
+la rana|Frosch|green frog with large back legs
+el sapo|Kröte|brown toad with bumpy skin
+#11|Pflanzen|noun
+la flor|Blume|simple red flower on green stem with leaves
+la rosa|Rose|red rose with layered petals and thorny stem
+el girasol|Sonnenblume|large yellow sunflower with brown center
+el tulipán|Tulpe|pink cup shaped tulip
+la margarita|Margerite|white daisy with yellow center
+el lirio|Lilie|white lily with long stamens
+la orquídea|Orchidee|purple orchid branch
+la lavanda|Lavendel|bunch of purple lavender spikes
+la amapola|Mohnblume|red poppy with black center
+el diente de león|Löwenzahn|dandelion seed head with a few floating seeds
+el cactus|Kaktus|green cactus with two arms in clay pot
+el helecho|Farn|curled green fern fronds
+el bambú|Bambus|cluster of jointed green bamboo stalks
+la palmera|Palme|palm tree with curved trunk and coconuts
+el pino|Kiefer|pine tree with needle branches and cones
+el roble|Eiche|large oak tree with acorns
+el olivo|Olivenbaum|olive tree with grey green leaves and olives
+el sauce|Weide|weeping willow with hanging branches
+el abeto|Tanne|triangular fir tree
+el árbol|Baum|generic leafy green tree
+el arbusto|Strauch|rounded leafy bush
+la hierba|Gras|tuft of fresh green grass
+el musgo|Moos|green moss covering a small rock
+la semilla|Samen|large seed sprouting a small root
+la raíz|Wurzel|plant pulled up showing branching roots
+#12|Landschaften|noun
+el bosque|Wald|small cluster of different dense forest trees
+la selva|Dschungel|dense tropical jungle with vines and broad leaves
+el desierto|Wüste|sand dunes with one cactus under sun
+la montaña|Berg|high triangular mountain with snowy peak
+la colina|Hügel|gentle rounded grassy hill
+el valle|Tal|green valley between two hills with small river
+el volcán|Vulkan|volcano erupting red lava
+la cueva|Höhle|dark cave entrance in rocky hillside
+el acantilado|Klippe|steep rocky cliff above sea waves
+la isla|Insel|small palm island surrounded by blue water
+el río|Fluss|winding blue river between green banks
+el lago|See|still blue lake with reeds and hills
+la cascada|Wasserfall|waterfall tumbling from rock ledge
+el mar|Meer|wide deep blue sea waves with distant horizon
+la playa|Strand|sandy beach with gentle blue surf and seashell
+el pantano|Sumpf|marsh with reeds and muddy water
+el prado|Wiese|green meadow with a few flowers
+el campo|Feld|cultivated field with neat crop rows
+el jardín|Garten|small garden with flowerbeds and a path
+el parque|Park|park scene with bench tree and path
+la roca|Fels|large angular grey boulder
+la piedra|Stein|small smooth grey pebble
+la arena|Sand|small mound of golden sand
+la tierra|Erde|mound of brown soil with green sprout
+el barro|Schlamm|brown mud puddle with a footprint
+#13|Wetter und Himmel|noun
+el sol|Sonne|bright yellow sun with simple rays
+la luna|Mond|pale crescent moon with small craters
+la estrella|Stern|single yellow five pointed star
+la nube|Wolke|fluffy white cloud
+la lluvia|Regen|grey cloud releasing blue raindrops
+la nieve|Schnee|snowflakes falling onto a small snowdrift
+el granizo|Hagel|grey cloud dropping small white hail balls
+el viento|Wind|swirling wind gust bending a small tree
+la tormenta|Gewitter|dark storm cloud with lightning and rain
+el relámpago|Blitz|bright yellow zigzag lightning bolt
+el arcoíris|Regenbogen|colorful rainbow arch between two clouds
+la niebla|Nebel|small trees partly hidden in layered pale fog
+la escarcha|Raureif|leaf covered with white frost crystals
+el hielo|Eis|three pale blue ice cubes
+el copo de nieve|Schneeflocke|single symmetrical six armed snowflake
+el charco|Pfütze|small blue rain puddle with one ripple
+el amanecer|Sonnenaufgang|sun rising behind hills with pink sky
+el atardecer|Sonnenuntergang|orange sun setting over sea
+la noche|Nacht|dark blue night sky with moon and stars
+el día|Tag|bright sun high over green landscape
+el cielo|Himmel|blue sky with two white clouds
+el planeta|Planet|blue and green round planet
+el cometa|Komet|bright comet with long glowing tail
+el meteorito|Meteorit|rocky meteor with fiery trail
+la galaxia|Galaxie|spiral galaxy with bright center and stars
+#14|Körper|noun
+el cuerpo|Körper|full human figure standing arms slightly apart
+la cabeza|Kopf|human head with short hair in profile
+el pelo|Haar|head seen from behind with long flowing hair emphasized
+la cara|Gesicht|friendly human face front view
+el ojo|Auge|large human eye with blue iris
+la oreja|Ohr|single human ear
+la nariz|Nase|human nose in side view
+la boca|Mund|open smiling mouth with lips
+el diente|Zahn|single white molar tooth
+la lengua|Zunge|open mouth with tongue sticking out
+el cuello|Hals|human neck between head and shoulders highlighted red
+el hombro|Schulter|upper torso with one shoulder highlighted red
+el brazo|Arm|bent human arm with hand
+el codo|Ellbogen|bent arm with elbow joint highlighted red
+la mano|Hand|open human hand with five fingers
+el dedo|Finger|hand with index finger extended and highlighted
+la uña|Fingernagel|close view of fingertip with fingernail emphasized
+el pecho|Brust|clothed upper torso with chest area highlighted
+la espalda|Rücken|human upper body seen from behind
+el vientre|Bauch|torso with round belly highlighted
+la pierna|Bein|single human leg from thigh to foot
+la rodilla|Knie|bent leg with knee highlighted red
+el pie|Fuß|bare human foot side view
+el talón|Ferse|foot with heel highlighted red
+el tobillo|Knöchel|foot and lower leg with ankle highlighted red
+#15|Gesundheit und Medizin|noun
+el corazón|Herz|simple anatomical red heart with blood vessels
+el cerebro|Gehirn|pink human brain with folded surface
+el pulmón|Lunge|pair of pink lungs with windpipe
+el estómago|Magen|simple pink anatomical stomach
+el hueso|Knochen|white long bone
+el músculo|Muskel|flexed arm with red biceps muscle emphasized
+la sangre|Blut|single red blood drop
+la herida|Wunde|small arm with a shallow red scrape
+la cicatriz|Narbe|skin patch with a healed pale scar
+la venda|Verband|rolled white bandage with loose end
+la tirita|Pflaster|crossed adhesive bandages
+la medicina|Medikament|plain pill bottle beside capsule
+la pastilla|Tablette|round white tablet with dividing line
+la jeringuilla|Spritze|medical syringe with blue barrel
+el termómetro|Thermometer|digital medical thermometer without readable numbers
+la mascarilla|Maske|blue surgical face mask with ear loops
+el estetoscopio|Stethoskop|medical stethoscope
+la muleta|Krücke|pair of underarm crutches
+la silla de ruedas|Rollstuhl|wheelchair side view
+la camilla|Trage|medical stretcher on wheels
+la ambulancia|Krankenwagen|white ambulance with simple red cross
+el botiquín|Erste-Hilfe-Kasten|white first aid case with red cross
+la radiografía|Röntgenbild|dark x ray sheet showing hand bones
+la fiebre|Fieber|flushed person in bed with thermometer and hot forehead
+la tos|Husten|person coughing into bent elbow with small breath marks
+#16|Kleidung|noun
+la camisa|Hemd|blue button up shirt
+la camiseta|T-Shirt|red short sleeved t shirt
+el pantalón|Hose|pair of blue trousers
+los vaqueros|Jeans|blue denim jeans with stitched pockets
+el vestido|Kleid|simple red dress with flared skirt
+la falda|Rock|green pleated skirt
+el jersey|Pullover|cozy knitted orange sweater
+la chaqueta|Jacke|short green jacket with zipper
+el abrigo|Mantel|long brown winter coat
+el traje|Anzug|dark suit jacket and trousers
+el chaleco|Weste|buttoned sleeveless vest
+el pijama|Schlafanzug|striped pajama top and bottoms
+la bata|Bademantel|white bathrobe tied at waist
+el bañador|Badehose|blue swimming trunks
+el bikini|Bikini|two piece yellow bikini
+la ropa interior|Unterwäsche|folded underwear briefs
+el sujetador|BH|simple bra on plain background
+el calcetín|Socke|single striped sock
+la media|Strumpf|pair of long stockings
+el zapato|Schuh|brown lace up shoe
+la zapatilla|Turnschuh|colorful athletic sneaker
+la bota|Stiefel|tall brown boot
+la sandalia|Sandale|brown open sandal
+la zapatilla de casa|Hausschuh|soft fluffy house slipper
+el impermeable|Regenmantel|yellow hooded raincoat
+#17|Accessoires|noun
+el sombrero|Hut|brown brimmed hat
+la gorra|Kappe|red baseball cap
+el gorro|Mütze|blue knitted winter hat with pompom
+la bufanda|Schal|long striped scarf
+el guante|Handschuh|single winter glove with five fingers
+el cinturón|Gürtel|brown leather belt with buckle
+la corbata|Krawatte|blue striped necktie
+la pajarita|Fliege|red bow tie
+las gafas|Brille|round eyeglasses with clear lenses
+las gafas de sol|Sonnenbrille|dark sunglasses
+el reloj|Armbanduhr|round wristwatch with plain clock hands
+el anillo|Ring|gold ring with small blue gemstone
+el collar|Halskette|pearl necklace
+la pulsera|Armband|gold chain bracelet
+el pendiente|Ohrring|pair of dangling earrings
+el bolso|Handtasche|red handbag with handles
+la mochila|Rucksack|blue backpack with front pocket
+la cartera|Geldbörse|brown wallet with coins peeking out
+el paraguas|Regenschirm|open red umbrella
+el bastón|Gehstock|wooden walking cane
+el casco|Helm|blue bicycle helmet
+la máscara|Verkleidungsmaske|colorful carnival eye mask
+el abanico|Fächer|folded paper hand fan opened wide
+el pañuelo|Taschentuch|white cloth handkerchief with blue border
+el broche|Brosche|decorative gold butterfly brooch
+#18|Räume und Wohnen|noun
+la casa|Haus|small house with red roof and front door
+el piso|Wohnung|cutaway apartment with several rooms
+la habitación|Zimmer|simple room with window and one chair
+el dormitorio|Schlafzimmer|bedroom with bed and bedside lamp
+el salón|Wohnzimmer|living room with sofa and television
+la cocina|Küche|kitchen with stove sink and cupboards
+el baño|Badezimmer|bathroom with bathtub sink and toilet
+el comedor|Esszimmer|dining room with table and four chairs
+el pasillo|Flur|long hallway with doors along both sides
+la entrada|Eingang|front door entrance with welcome mat and coat hook
+el sótano|Keller|house cutaway emphasizing basement beneath ground
+el ático|Dachboden|attic room under sloping roof with storage boxes
+el balcón|Balkon|small balcony railing with flower pots
+la terraza|Terrasse|outdoor terrace with table parasol and chairs
+el garaje|Garage|garage with open door and car inside
+el tejado|Dach|house roof with red tiles emphasized
+la pared|Wand|brick wall with plaster section
+el suelo|Fußboden|interior floor with wooden planks emphasized
+el techo|Zimmerdecke|room cutaway with ceiling and hanging light emphasized
+la puerta|Tür|wooden door slightly open
+la ventana|Fenster|window with two open shutters
+la escalera|Treppe|short flight of stairs with railing
+la chimenea|Kamin|brick fireplace with warm fire
+el ascensor|Aufzug|elevator doors open revealing cabin
+el patio|Innenhof|enclosed courtyard with potted plant and stone paving
+#19|Möbel|noun
+la mesa|Tisch|simple wooden table
+la silla|Stuhl|wooden chair with backrest
+el sillón|Sessel|comfortable green armchair
+el sofá|Sofa|red two seat sofa
+la cama|Bett|bed with pillow and blue blanket
+la litera|Etagenbett|wooden bunk bed with ladder
+la cuna|Babybett|baby crib with vertical rails
+el armario|Kleiderschrank|large wooden wardrobe with two doors
+la cómoda|Kommode|wooden chest of drawers
+la estantería|Regal|tall bookcase with books
+el escritorio|Schreibtisch|writing desk with drawers and a lamp
+la mesita de noche|Nachttisch|small bedside table with drawer and lamp
+el taburete|Hocker|round stool with three legs
+el banco|Sitzbank|wooden park bench
+el espejo|Spiegel|oval mirror in golden frame
+la alfombra|Teppich|rectangular patterned rug with tassels
+la cortina|Vorhang|pair of blue curtains tied back
+la persiana|Jalousie|window blind with horizontal slats
+la lámpara|Lampe|table lamp with yellow shade
+la bombilla|Glühbirne|single glass light bulb
+el cojín|Kissen|square soft cushion
+la almohada|Kopfkissen|white rectangular bed pillow
+la manta|Decke|folded plaid blanket
+el colchón|Matratze|thick striped mattress
+el perchero|Garderobenständer|standing wooden coat rack with hooks
+#20|Küchenutensilien|noun
+el plato|Teller|round white dinner plate with blue rim
+el cuenco|Schüssel|deep blue bowl
+el vaso|Glas|empty clear drinking glass
+la taza|Tasse|red mug with handle
+la copa|Weinglas|empty stemmed wine glass
+la cuchara|Löffel|silver tablespoon
+el tenedor|Gabel|silver four pronged fork
+el cuchillo|Messer|kitchen knife with wooden handle
+la sartén|Bratpfanne|black frying pan
+la olla|Kochtopf|steel cooking pot with two handles and lid
+la tapa|Deckel|round saucepan lid with handle
+el colador|Sieb|metal kitchen strainer with handle
+el rallador|Reibe|box cheese grater
+el pelador|Schäler|Y shaped vegetable peeler
+la espátula|Pfannenwender|flat kitchen spatula
+el cucharón|Suppenkelle|deep soup ladle
+el batidor|Schneebesen|wire kitchen whisk
+la tabla de cortar|Schneidebrett|wooden chopping board with handle
+el rodillo|Nudelholz|wooden rolling pin
+el abrelatas|Dosenöffner|manual can opener
+el sacacorchos|Korkenzieher|classic corkscrew with wooden handle
+la tetera|Teekanne|round ceramic teapot with spout
+la cafetera|Kaffeekanne|silver stovetop moka pot
+la jarra|Krug|clear water pitcher with handle
+la bandeja|Tablett|rectangular serving tray with two handles

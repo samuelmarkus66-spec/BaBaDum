@@ -1,0 +1,13 @@
+node_modules/
+# dist/ is versioned so GitHub Download ZIP runs without an npm install.
+test-results/
+playwright-report/
+local-originals/
+.npm-cache/
+*.log
+.env*
+!.env.example
+
+*.tsbuildinfo
+local-tools/
+content/sources/es_50k.txt

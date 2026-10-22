@@ -1,0 +1,8 @@
+{
+  "audioFiles": 1500,
+  "imageAtlases": 60,
+  "minSeconds": 0.8113333333333334,
+  "maxSeconds": 1.938,
+  "minRms": 0.039378546561949314,
+  "result": "All audio files decoded to finite non-silent PCM; all image atlases decoded as RGBA."
+}
