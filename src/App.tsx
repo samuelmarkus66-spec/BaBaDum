@@ -35,7 +35,7 @@ export function App() {
   const [question, setQuestion] = useState<Question>();
   const [selection, setSelection] = useState<Selection>({ reason: 'complete' });
   const [feedback, setFeedback] = useState<Feedback>();
-  const [practice, setPractice] = useState(false);
+  const [extraLearningDay, setExtraLearningDay] = useState<string>();
   const [ended, setEnded] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [settingsDraft, setSettingsDraft] = useState<Settings>();
@@ -52,10 +52,10 @@ export function App() {
   const initial = useRef(true);
   const lastCheckedDay = useRef(localDay(new Date()));
 
-  const nextQuestion = useCallback((state: Snapshot, freePractice: boolean, previous?: string) => {
+  const nextQuestion = useCallback((state: Snapshot, extraDay?: string, previous?: string) => {
     if (!state.pack) return;
     const selected = selectNext({ packId: state.pack.id, vocabulary: state.pack.vocabulary,
-      cards: state.cards, settings: state.settings, now: new Date(), previousId: previous, practice: freePractice });
+      cards: state.cards, settings: state.settings, now: new Date(), previousId: previous, ignoreDailyLimit: extraDay === localDay(new Date()) });
     setSelection(selected); setFeedback(undefined); locked.current = false;
     setQuestion(selected.word ? { target: selected.word,
       options: answerOptions(selected.word, state.pack.vocabulary, Math.random, hashes.current), selection: selected } : undefined);
@@ -83,7 +83,7 @@ export function App() {
         setBusy('');
         await loadAssets();
         if (!active) return;
-        setSnapshot(state); nextQuestion(state, false); initial.current = false;
+        setSnapshot(state); nextQuestion(state); initial.current = false;
       } catch (cause) { if (active) { setError(message(cause)); setBusy(''); initial.current = false; } }
     }
     void start();
@@ -94,12 +94,12 @@ export function App() {
     return () => clearInterval(tick);
   }, []);
   useEffect(() => {
-    if (!snapshot || question || ended || practice || settingsOpen || busy) return;
+    if (!snapshot || question || ended || settingsOpen || busy) return;
     const due = snapshot.cards.some(c => c.language === snapshot.settings.language && c.card.due <= now);
     const dayChanged = lastCheckedDay.current !== localDay(now);
     lastCheckedDay.current = localDay(now);
-    if (due || dayChanged) nextQuestion(snapshot, false, previousId.current);
-  }, [now, snapshot, question, ended, practice, settingsOpen, busy, nextQuestion]);
+    if (due || dayChanged) nextQuestion(snapshot, undefined, previousId.current);
+  }, [now, snapshot, question, ended, extraLearningDay, settingsOpen, busy, nextQuestion]);
   useEffect(() => {
     if (!snapshot?.pack?.font || !urls[snapshot.pack.font]) return;
     let active = true;
@@ -129,36 +129,33 @@ export function App() {
       void repository.snapshot(false).then(state => {
         if (state.revision !== snapshot.revision) {
           setSnapshot(state); setPendingBackup(undefined); setSettingsDraft(undefined); setSettingsOpen(false);
-          void loadAssets().then(() => nextQuestion(state, practice, previousId.current)).catch(cause => setError(message(cause)));
+          void loadAssets().then(() => nextQuestion(state, extraLearningDay, previousId.current)).catch(cause => setError(message(cause)));
         }
       }).catch(cause => setError(message(cause)));
     };
     window.addEventListener('focus', update);
     return () => window.removeEventListener('focus', update);
-  }, [snapshot, busy, practice, loadAssets, nextQuestion]);
+  }, [snapshot, busy, extraLearningDay, loadAssets, nextQuestion]);
 
   async function answer(word: Vocabulary) {
     if (!snapshot?.pack || !question || locked.current || busy || settingsOpen || ended) return;
     locked.current = true; setError(''); player.current?.pause();
     const correct = word.id === question.target.id;
     try {
-      let updated = snapshot;
-      if (!practice) {
-        await repository.answer({ packId: snapshot.pack.id, word: question.target, answerId: word.id,
-          now: new Date(), revision: snapshot.revision, reviewId: crypto.randomUUID() });
-        updated = await repository.snapshot(false);
-        setSnapshot(updated);
-      }
+      await repository.answer({ packId: snapshot.pack.id, word: question.target, answerId: word.id,
+        now: new Date(), revision: snapshot.revision, reviewId: crypto.randomUUID() });
+      const updated = await repository.snapshot(false);
+      setSnapshot(updated);
       setFeedback({ selectedId: word.id, correct });
       previousId.current = question.target.id;
       timer.current = setTimeout(() => {
-        try { nextQuestion(updated, practice, previousId.current); }
+        try { nextQuestion(updated, extraLearningDay, previousId.current); }
         catch (cause) { setError(message(cause)); locked.current = false; }
       }, correct ? 850 : 1700);
     } catch (cause) {
       setError(message(cause)); locked.current = false;
       if (cause instanceof StaleProgressError) {
-        const updated = await repository.snapshot(false); setSnapshot(updated); await loadAssets(); nextQuestion(updated, practice, previousId.current);
+        const updated = await repository.snapshot(false); setSnapshot(updated); await loadAssets(); nextQuestion(updated, extraLearningDay, previousId.current);
       }
     }
   }
@@ -180,7 +177,7 @@ export function App() {
       await repository.installPack(pack, assets, state.revision);
       await loadAssets();
       const updated = await repository.snapshot(false); setSnapshot(updated);
-      setPractice(false); setEnded(false); setSettingsOpen(false); nextQuestion(updated, false);
+      setExtraLearningDay(undefined); setEnded(false); setSettingsOpen(false); nextQuestion(updated);
       void navigator.storage?.persist().catch(() => false);
     } catch (cause) { setError(message(cause)); }
     finally { setBusy(''); }
@@ -195,7 +192,7 @@ export function App() {
     try {
       await repository.saveSettings(settingsDraft, snapshot.revision);
       const updated = await repository.snapshot(false); setSnapshot(updated); setSettingsOpen(false); setEnded(false);
-      nextQuestion(updated, practice, previousId.current);
+      setExtraLearningDay(undefined); nextQuestion(updated, undefined, previousId.current);
     } catch (cause) { setError(message(cause)); }
     finally { setBusy(''); }
   }
@@ -214,7 +211,7 @@ export function App() {
     try {
       await repository.restore(pendingBackup, snapshot.revision);
       const updated = await repository.snapshot(false); setSnapshot(updated); setPendingBackup(undefined);
-      setSettingsDraft(updated.settings); setSettingsOpen(false); setEnded(false); setPractice(false); nextQuestion(updated, false);
+      setSettingsDraft(updated.settings); setSettingsOpen(false); setEnded(false); setExtraLearningDay(undefined); nextQuestion(updated);
     } catch (cause) { setError(message(cause)); }
     finally { setBusy(''); }
   }
@@ -259,7 +256,7 @@ export function App() {
     <div className="mode-icon" title="Ein Wort · vier Bilder" aria-label="Ein Wort, vier Bilder"><span>A</span><i /><i /><i /><i /></div>
     {pack && <>
       <div className="score" aria-label={`${totalCorrect} richtige Antworten insgesamt`}><strong>{totalCorrect}</strong><span><Flag value={language?.flag} /> {stats?.correct}</span></div>
-      <button className="settings-trigger" onClick={openSettings} disabled={!!feedback || !!busy} aria-label="Einstellungen öffnen"><span aria-hidden="true">⚙</span> Lokal{practice && <small> · Freies Üben</small>}</button>
+      <button className="settings-trigger" onClick={openSettings} disabled={!!feedback || !!busy} aria-label="Einstellungen öffnen"><span aria-hidden="true">⚙</span> Lokal</button>
       <button className="language-trigger" onClick={openSettings} disabled={!!feedback || !!busy} aria-label="Sprache auswählen"><Flag value={language?.flag} /></button>
     </>}
     {question && !ended && <div className="word-anchor"><button className="word" onClick={() => void playAudio(question.target)} aria-label={`Aussprache: ${question.target.word}`} title="Aussprache wiederholen">{question.target.word}</button>{feedback && question.target.translation && <span className="meaning">{question.target.translation}</span>}</div>}
@@ -278,12 +275,12 @@ export function App() {
       <span className="eyebrow">GUT GELERNT</span><h1>Für jetzt geschafft.</h1>
       <p>{stats?.newToday ?? 0} neue Wörter heute · {stats?.due ?? 0} Wiederholungen fällig</p>
       {selection.nextDue && <p className="next-due">Nächste Wiederholung: {selection.nextDue.toLocaleString('de-DE', { dateStyle: 'short', timeStyle: 'short' })}.<br />Wenn du hier bleibst, geht es dann automatisch weiter.</p>}
-      <button className="primary" onClick={() => { setPractice(true); nextQuestion(snapshot!, true, previousId.current); }}>Frei weiterüben</button>
+      {stats && stats.learned < vocabularyCount && <button className="primary" onClick={() => { const day = localDay(new Date()); setExtraLearningDay(day); nextQuestion(snapshot!, day, previousId.current); }}>Weiterlernen</button>}
       <button className="secondary" onClick={() => setEnded(true)}>Lerneinheit beenden</button>
-      <small>Freies Üben verändert deinen Wiederholungsplan nicht.</small>
+      <small>Beim Weiterlernen zählen alle zusätzlichen Wörter und Antworten zu deinem Fortschritt und Wiederholungsplan.</small>
     </section>}
-    {ended && <section className="complete panel"><span className="eyebrow">BIS BALD</span><h1>Dein Fortschritt<br />ist gespeichert.</h1><button className="primary" onClick={() => { setEnded(false); setPractice(false); nextQuestion(snapshot!, false, previousId.current); }}>Lernen fortsetzen</button></section>}
-    {practice && question && <button className="practice-exit" onClick={() => { if (locked.current) return; setPractice(false); nextQuestion(snapshot!, false, previousId.current); }}>Freies Üben beenden</button>}
+    {ended && <section className="complete panel"><span className="eyebrow">BIS BALD</span><h1>Dein Fortschritt<br />ist gespeichert.</h1><button className="primary" onClick={() => { setEnded(false); setExtraLearningDay(undefined); nextQuestion(snapshot!, undefined, previousId.current); }}>Lernen fortsetzen</button></section>}
+    {extraLearningDay === localDay(now) && question && !ended && <button className="session-exit" onClick={() => { if (locked.current) return; setEnded(true); }}>Lerneinheit beenden</button>}
     {busy && <div className="working" role="status">{busy}</div>}
     {error && !settingsOpen && <div className="error-toast" role="alert">{error}<button aria-label="Meldung schließen" onClick={() => setError('')}>×</button></div>}
     {settingsOpen && snapshot && pack && settingsDraft && <Modal title="Einstellungen" close={() => { if (!busy) { setSettingsOpen(false); setPendingBackup(undefined); setError(''); } }}>

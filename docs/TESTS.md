@@ -3,7 +3,7 @@
 Geprüft unter Linux mit Node.js 24 und Chromium.
 
 - `npm run build`: TypeScript-Prüfung und Produktionsbuild erfolgreich.
-- `npm test`: **36 Tests bestanden**.
+- `npm test`: **38 Tests bestanden**.
 - `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium npm run test:e2e`: **6 Browser-Tests bestanden**, gegen den fertigen Node-Produktionsserver einschließlich Content-Security-Policy.
 - Alle **60 PNG-Tafeln** vollständig als RGBA dekodiert; alle **1500 OGG-Dateien** vollständig als endliches, nicht stummes PCM dekodiert. Dauer 0,81 bis 1,94 Sekunden. Bericht: `content/media-validation.json`.
 - Manifest: 1500 eindeutige Wörter und IDs, 1000 Nomen / 300 Verben / 200 Adjektive, 1561 Medienreferenzen einschließlich Schrift. SHA-256-Prüfsummen stimmen. Für jedes Wort wurden vier passende, eindeutige Antwortoptionen geprüft.
@@ -16,9 +16,9 @@ IndexedDB wird auf erneutes Öffnen, Datumswerte, Historie, atomare Wiederherste
 
 ## Browserabläufe
 
-1. Automatische Einrichtung des echten 1500er-Pakets, echte Audiowiedergabe, SVG-Antwortbilder, Good-Bewertung, Tageslimit, Neuladen, erhaltener Lernstand und freies Üben. Keine externen Netzwerkanfragen.
+1. Automatische Einrichtung des echten 1500er-Pakets, echte Audiowiedergabe, SVG-Antwortbilder, Good-Bewertung, Tageslimit, Neuladen, erhaltener Lernstand und Weiterlernen über das Tagesziel hinaus. Keine externen Netzwerkanfragen.
 2. Ohne mitgeliefertes Paket erscheint der manuelle Import.
-3. Ordnerimport, Again-Bewertung, richtige Markierung, Schutz vor Doppelbewertung, Neustart und freies Üben ohne Änderung des Lernplans.
+3. Ordnerimport, Again-Bewertung, richtige Markierung, Schutz vor Doppelbewertung, Neustart und Weiterlernen mit Speicherung zusätzlicher Wörter, Antworten und FSRS-Termine. Der Test lernt bei einem Tagesziel von einem Wort insgesamt vier Wörter und prüft, dass Zähler, Verlauf und Termine nach erneutem Laden erhalten bleiben. Das eingestellte Tagesziel bleibt dabei eins.
 4. Good-Bewertung, Wiederholung nach Fälligkeit, Sicherungsimport, Abweisung ungültiger Sicherungen und getrennte Sprachen.
 5. Lokale Medien nach Neuladen, tatsächliche Audiowiedergabe, Vier-Felder-Geometrie, mobile Ansicht ohne horizontalen Überlauf und Tastaturbedienung des Dialogs.
 6. Ungültiger Medienimport erhält den vorherigen Wortschatz.
@@ -31,4 +31,4 @@ Desktop- und Mobilansichten sowie eine Auswahl der problematischsten Rasteraussc
 
 Bild- und Bedeutungszuordnungen sowie Aussprache sind nur stichprobenartig inhaltlich geprüft. Generierte Bilder können kleine Randartefakte enthalten; abstrakte Eigenschaften und verwandte Handlungen bleiben teilweise mehrdeutig. Eine vollständige sprachdidaktische Prüfung aller 1500 Einträge steht nicht hinter diesem Testbericht.
 
-Kein Windows-System verfügbar: Node-Server und Browserabläufe wurden unter Linux geprüft, die Windows-Batchdatei nicht auf Windows ausgeführt. Keine Originalressourcen verwendet und keine pixelgenaue Übereinstimmung behauptet. Kein GitHub-Push, keine öffentliche Website und kein Restore der Cloud-Umgebung in einer neuen Aufgabe getestet.
+Kein Windows-System verfügbar: Node-Server und Browserabläufe wurden unter Linux geprüft, die Windows-Batchdatei nicht auf Windows ausgeführt. Keine Originalressourcen verwendet und keine pixelgenaue Übereinstimmung behauptet. Das Projekt wird auf ausdrücklichen Nutzerwunsch im privaten GitHub-Repository bereitgestellt. Keine öffentliche Website und kein Restore der Cloud-Umgebung in einer neuen Aufgabe getestet.

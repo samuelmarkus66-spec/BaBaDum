@@ -80,7 +80,7 @@ test('zeigt ohne mitgeliefertes Paket den Import an und nimmt keine externen Anf
   expect(external).toEqual([]);
 });
 
-test('prüft alle Dateien, speichert Again, verhindert Doppelklicks und übt ohne FSRS-Änderung frei', async ({ page }) => {
+test('prüft alle Dateien, speichert Again, verhindert Doppelklicks und zählt zusätzliche Wörter nach dem Tagesziel', async ({ page }) => {
   const errors: string[] = []; page.on('pageerror', e => errors.push(e.message));
   await install(page); await configure(page, 1);
   const index = await correctIndex(page); expect(index).toBeGreaterThanOrEqual(0);
@@ -96,8 +96,8 @@ test('prüft alle Dateien, speichert Again, verhindert Doppelklicks und übt ohn
   expect(Date.parse(saved.cards[0].card.due) - Date.parse(saved.reviews[0].at)).toBe(60_000);
   await closeSettings(page); await page.reload();
   await expect(page.getByRole('heading', { name: 'Für jetzt geschafft.' })).toBeVisible();
-  await page.getByRole('button', { name: 'Frei weiterüben' }).click();
-  await expect(page.getByRole('button', { name: 'Freies Üben beenden' })).toBeVisible();
+  await page.getByRole('button', { name: 'Weiterlernen' }).click();
+  await expect(page.getByRole('button', { name: 'Lerneinheit beenden' })).toBeVisible();
   for (let i = 0; i < 3; i++) {
     const oldWord = await page.locator('.word').innerText();
     const index = await correctIndex(page);
@@ -105,7 +105,17 @@ test('prüft alle Dateien, speichert Again, verhindert Doppelklicks und übt ohn
     await expect(page.locator('.word')).not.toHaveText(oldWord);
   }
   const after = await backup(page);
-  expect(after.cards).toEqual(saved.cards); expect(after.reviews).toEqual(saved.reviews);
+  expect(after.cards).toHaveLength(4); expect(after.reviews).toHaveLength(4);
+  expect(after.cards.find((c: { key: string }) => c.key === saved.cards[0].key)).toEqual(saved.cards[0]);
+  expect(after.reviews.filter((r: { correct: boolean }) => r.correct)).toHaveLength(3);
+  expect(after.cards.every((c: { card: { reps: number } }) => c.card.reps === 1)).toBe(true);
+  await expect(page.locator('.history-summary')).toHaveText('4 Antworten · 3 richtig · 1 falsch');
+  await expect(page.getByLabel('Neue Wörter pro Tag', { exact: true })).toHaveValue('1');
+  await expect(page.locator('.statistics div').first().locator('strong')).toHaveText('4');
+  await closeSettings(page); await page.reload();
+  await expect(page.getByRole('heading', { name: 'Für jetzt geschafft.' })).toBeVisible();
+  const restored = await backup(page);
+  expect(restored.cards).toEqual(after.cards); expect(restored.reviews).toEqual(after.reviews);
   expect(errors).toEqual([]);
 });
 

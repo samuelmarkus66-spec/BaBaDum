@@ -78,12 +78,24 @@ describe('Auswahl und Tageslimit', () => {
     expect(select({ cards: [learned(2), oldest] }).word?.id).toBe('word-1');
     expect(select({ cards: [learned(2), oldest], previousId: 'word-1' }).word?.id).toBe('word-2');
   });
-  it('Freies Üben darf Zukunftskarten wählen und mutiert keinen Zustand', () => {
+  it('lernt nach dem Tagesziel zusätzliche neue Wörter mit unverändertem Ziel', () => {
+    const card = review(true).record;
+    const limit = { ...settings, newPerDay: 1 };
+    expect(select({ cards: [card], settings: limit }).reason).toBe('complete');
+    const next = select({ cards: [card], settings: limit, ignoreDailyLimit: true });
+    expect(next.reason).toBe('new'); expect(next.word?.id).not.toBe(card.vocabularyId);
+    const extra = review(true, { word: next.word!, answerId: next.word!.id, settings: limit }).record;
+    expect(statistics(pack.id, [card, extra], 'es', time)).toMatchObject({ newToday: 2, learned: 2, reviews: 2, correct: 2 });
+    expect(extra.card.due.getTime()).toBeGreaterThan(time.getTime());
+    expect(limit.newPerDay).toBe(1);
+  });
+  it('bevorzugt auch beim Weiterlernen fällige Karten', () => {
+    expect(select({ cards: [learned(2)], settings: { ...settings, newPerDay: 0 }, ignoreDailyLimit: true }))
+      .toMatchObject({ reason: 'due', word: { id: 'word-2' } });
+  });
+  it('beendet auch beim Weiterlernen die Einheit, wenn alle Karten erst später fällig sind', () => {
     const cards = words.map((_, i) => learned(i, new Date(+time + 86_400_000)));
-    const before = structuredClone(cards);
-    const result = select({ cards, practice: true, previousId: 'word-1' });
-    expect(result.reason).toBe('practice'); expect(result.word).toBeDefined();
-    expect(result.word?.id).not.toBe('word-1'); expect(cards).toEqual(before);
+    expect(select({ cards, ignoreDailyLimit: true })).toEqual({ reason: 'complete', nextDue: new Date(+time + 86_400_000) });
   });
   it('hält Vokabeln verschiedener Sprachen getrennt', () => {
     expect(wordKey(pack.id, pack.vocabulary[0])).not.toBe(wordKey(pack.id, pack.vocabulary[6]));

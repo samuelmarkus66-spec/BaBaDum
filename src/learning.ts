@@ -39,23 +39,22 @@ export function answerOptions(target: Vocabulary, vocabulary: Vocabulary[], rand
   return shuffled(chosen, random);
 }
 export interface Selection {
-  word?: Vocabulary; reason: 'due' | 'new' | 'complete' | 'practice'; nextDue?: Date;
+  word?: Vocabulary; reason: 'due' | 'new' | 'complete'; nextDue?: Date;
 }
 export function selectNext(args: {
   packId: string; vocabulary: Vocabulary[]; cards: LearnedWord[]; settings: Settings;
-  now: Date; previousId?: string; practice?: boolean; random?: Random;
+  now: Date; previousId?: string; ignoreDailyLimit?: boolean; random?: Random;
 }): Selection {
-  const { packId, cards, settings, now, previousId, practice, random = Math.random } = args;
+  const { packId, cards, settings, now, previousId, ignoreDailyLimit, random = Math.random } = args;
   const words = args.vocabulary.filter(w => w.language === settings.language);
   const records = new Map(cards.filter(c => c.packId === packId && c.language === settings.language).map(c => [c.key, c]));
-  if (practice) return { word: shuffled(words.filter(w => w.id !== previousId || words.length === 1), random)[0], reason: 'practice' };
   const due = shuffled(words.filter(w => {
     const record = records.get(wordKey(packId, w));
     return record && record.card.due.getTime() <= now.getTime();
   }), random).sort((a, b) => records.get(wordKey(packId, a))!.card.due.getTime() - records.get(wordKey(packId, b))!.card.due.getTime());
   if (due.length) return { word: due.find(w => w.id !== previousId) ?? due[0], reason: 'due' };
   const newToday = [...records.values()].filter(c => c.introducedDay === localDay(now)).length;
-  if (newToday < settings.newPerDay) {
+  if (ignoreDailyLimit || newToday < settings.newPerDay) {
     const next = shuffled(words.filter(w => !records.has(wordKey(packId, w))), random)[0];
     if (next) return { word: next, reason: 'new' };
   }

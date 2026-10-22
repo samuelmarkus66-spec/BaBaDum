@@ -42,7 +42,7 @@ test('1500er-Wortschatz startet direkt, spielt echtes Audio, speichert FSRS und 
   await page.getByRole('button', { name: 'Einstellungen öffnen' }).click();
   await expect(page.locator('.history-summary')).toHaveText('1 Antworten · 1 richtig · 0 falsch');
   await page.getByRole('button', { name: 'Schließen', exact: true }).click();
-  await page.getByRole('button', { name: 'Frei weiterüben' }).click();
+  await page.getByRole('button', { name: 'Weiterlernen' }).click();
   await page.setViewportSize({ width: 390, height: 844 });
   await page.screenshot({ path: 'test-results/spanish-1500-mobile.png' });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

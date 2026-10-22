@@ -42,7 +42,7 @@ p { line-height: 1.6; font-size: 14px; }
 .primary:disabled, .secondary:disabled { opacity: .5; }.panel > .primary { width: 100%; }.panel > .secondary { margin-top: 10px; width: 100%; }
 .panel > small { display: block; margin-top: 15px; line-height: 1.6; font-size: 11px; color: #67716e; }
 .complete { text-align: center; }.complete h1 { line-height: 1.15; }.next-due { font-size: 12px; }
-.practice-exit { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); border: 0; border-radius: 4px; padding: 8px 12px; background: #edf8fae8; color: #293a4d; font-size: 12px; }
+.session-exit { position: fixed; top: 12px; left: 50%; transform: translateX(-50%); border: 0; border-radius: 4px; padding: 8px 12px; background: #edf8fae8; color: #293a4d; font-size: 12px; }
 .working { position: fixed; bottom: 64px; left: 50%; transform: translateX(-50%); background: #293a4d; color: #edf8fa; border-radius: 6px; padding: 12px 18px; font-size: 13px; z-index: 5; }
 .error-toast { position: fixed; top: 80px; left: 50%; transform: translateX(-50%); background: #fff8f2; border: 1px solid #9a3940; border-radius: 6px; padding: 16px 40px 16px 16px; color: #78272d; font-size: 13px; z-index: 10; width: min(540px, 90vw); }
 .error-toast button { position: absolute; right: 10px; top: 6px; background: transparent; border: 0; font-size: 24px; color: inherit; }
